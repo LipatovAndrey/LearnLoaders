@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LearnLoaders</string>
+    <string name="age_format">Количество лет :  %1s</string>
+    <string name="height_format">высота : %1s  Метров</string>
 </resources>

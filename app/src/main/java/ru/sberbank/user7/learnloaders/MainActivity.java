@@ -24,11 +24,12 @@ TextView name, age, height, specie;
         height = (TextView) findViewById(R.id.height);
         name = (TextView) findViewById(R.id.name);
         btn = (Button) findViewById(R.id.btn);
+
+        getSupportLoaderManager().initLoader(1, null, new AnimalsLoaderCallBacks());
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getSupportLoaderManager().initLoader(1, null, new AnimalsLoaderCallBacks());
                 getSupportLoaderManager().getLoader(1).forceLoad();
             }
         });
@@ -43,10 +44,10 @@ TextView name, age, height, specie;
 
         @Override
         public void onLoadFinished(Loader<Animal> loader, Animal data) {
-            age.setText(String.valueOf(data.getmAge()));
+            age.setText(getString(R.string.age_format, String.valueOf(data.getmAge())));
             name.setText(data.getName());
             specie.setText(data.getmSpecie());
-            height.setText(String.valueOf(data.getHeight()));
+            height.setText(getString(R.string.height_format, String.valueOf(data.getHeight())));
             Log.e("e","load finish");
         }
 
