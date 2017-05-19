@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-TextView name, age, height, specie;
+    TextView name, age, height, specie;
     Button btn;
 
 
@@ -29,7 +29,6 @@ TextView name, age, height, specie;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 getSupportLoaderManager().getLoader(1).forceLoad();
             }
         });
@@ -53,7 +52,6 @@ TextView name, age, height, specie;
 
         @Override
         public void onLoaderReset(Loader<Animal> loader) {
-
             Log.e("e","loaderReset");
         }
 
